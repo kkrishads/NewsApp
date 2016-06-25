@@ -11,6 +11,30 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        debug {
+            File debugKeyFile = file("/keystore/debug.keystore")
+
+            if (debugKeyFile.exists()) {
+                storeFile debugKeyFile
+                keyAlias 'androiddebugkey'
+                keyPassword 'android'
+                storePassword 'android'
+                System.out.println("Uses project's keystore")
+            } else {
+                System.out.println("System's default keystore used")
+            }
+        }
+
+        googlePlayRelease {
+            storeFile file("/keystore/keystore.jks")
+            keyAlias 'newsapp'
+            keyPassword 'newsapp_android'
+            storePassword 'newsapp_android'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
