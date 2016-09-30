@@ -18,9 +18,11 @@
     <ScrollView
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -40,7 +42,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="220dp"
                         android:scaleType="fitXY" />
-
+                    <RelativeLayout
+                        android:id="@+id/adViewContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -68,12 +74,15 @@
                             android:padding="4dp"
                             android:text="Publisher"
                             android:textColor="#af5200" />
+
                     </RelativeLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="#b7b7b7" />
+
+
 
                     <TextView
                         android:id="@+id/txt_news_heading"
@@ -95,20 +104,23 @@
                         android:textSize="16sp" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-        </LinearLayout>
+
+        </RelativeLayout>
 
     </ScrollView>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="right"
         android:src="@drawable/ic_share_white_24dp"
         app:backgroundTint="@color/colorPrimary"
         app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        app:pressedTranslationZ="12dp" />
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
